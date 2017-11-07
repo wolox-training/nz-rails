@@ -1,4 +1,4 @@
-# README
+# README https://travis-ci.org/wolox-training/nz-rails.svg?branch=master
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
