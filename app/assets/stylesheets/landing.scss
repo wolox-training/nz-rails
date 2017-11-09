@@ -1,3 +1,11 @@
-* {
-  font-family: $font;
+.banner {
+  display: block;
+  background-color: $orange;
+  width: auto;
+  height: 50px;
+}
+
+main-section {
+  display: flex;
+
 }
