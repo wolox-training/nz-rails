@@ -20,9 +20,9 @@
   }
 }
 
-.triangle{
+.triangle {
+  background-image: image-url('triangle.png');
   display: flex;
-  background-image: image-url("triangle.png");
   height: 13px;
   width: auto;
 }
