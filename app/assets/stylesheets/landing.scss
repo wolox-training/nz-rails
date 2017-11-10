@@ -10,7 +10,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 40px;
+  margin: 20px;
 
   .gradient-line {
     background: linear-gradient(0deg, $white, $orange 40%, $white);
@@ -42,8 +42,8 @@
     flex: 1;
     flex-flow: column;
     font: $font;
-    margin-top: auto;
     margin-bottom: auto;
+    margin-top: auto;
 
     .title {
       color: $dark-grey;
@@ -54,11 +54,10 @@
     .text {
       color: $grey;
       display: flex;
+      margin-bottom: 80px;
       margin-top: 20px;
-      margin-bottom: 20px;
       text-align: center;
       width: 200px;
-      margin-bottom: 100px;
     }
 
   }
@@ -70,14 +69,41 @@
 }
 
 .footer-section {
-  box-shadow: 0px -8px 20px 0px #11111129;
+  align-items: center;
   background-color: $orange;
+  box-shadow: 0 -8px 20px 0 #11111129;
   display: flex;
-  z-index: 1;
-  min-height: 20vh;
   flex-direction: column;
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
+  min-height: 20vh;
+  z-index: 1;
+
+  .footer-text {
+    color: $white;
+    font: $font;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .footer-input {
+    border-radius: 5px;
+    margin-top: 20px;
+    min-height: 30px;
+    min-width: 300px;
+  }
+
+  .footer-button {
+    border: 1px solid $white;
+    border-radius: 10px;
+    color: $white;
+    font: $font;
+    font-size: 20px;
+    margin-top: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    padding: 10px;
+
+  }
 
 }
 
