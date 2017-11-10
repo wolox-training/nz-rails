@@ -20,6 +20,18 @@
   }
 }
 
+.triangle{
+  display: flex;
+  background-image: image-url("triangle.png");
+  height: 13px;
+  width: auto;
+}
+
+.feature-section {
+  display: flex;
+
+}
+
 @media only screen and (max-width: 768px) {
   .phone,
   .gradient-line { display: none;}
