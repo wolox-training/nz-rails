@@ -23,12 +23,43 @@
 .triangle {
   background-image: image-url('triangle.png');
   display: flex;
-  height: 13px;
+  height: 12px;
   width: auto;
 }
 
 .feature-section {
+  align-items: center;
+  background-color: $light-grey;
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+  .item {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    font: $font;
+    margin: 30px 0;
+
+    .title {
+      color: $dark-grey;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .text {
+      color: $gray;
+      display: flex;
+      margin-top: 20px;
+      text-align: center;
+      width: 200px;
+    }
+
+  }
+
+  .border-image {
+    margin-top: 50px;
+  }
 
 }
 
