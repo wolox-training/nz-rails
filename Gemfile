@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rubocop', '~> 0.51.0', require: false
   gem 'rspec-rails', '~> 3.6'
   gem 'scss_lint', require: false
+  gem 'factory_bot'
 end
 
 group :development do
@@ -59,6 +60,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+  gem 'shoulda-matchers', '~> 3.0', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
