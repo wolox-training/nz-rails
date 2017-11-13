@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'book/index'
-
   get 'book/show'
 
   devise_for :users
