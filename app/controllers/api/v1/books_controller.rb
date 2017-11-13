@@ -4,8 +4,6 @@ module Api
       include Wor::Paginate
       def index
         render_paginated Book
-        # #@book = Book.all
-        # #render json: @book
       end
 
       def show
