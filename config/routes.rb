@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'book/index'
-  get 'book/show'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -8,6 +6,7 @@ Rails.application.routes.draw do
   root to: "landing#index"
 
   api_version(module: 'api/v1', path: { value: 'api/v1' }, defaults: { format: :json }) do
+      resources :books, only: [:show,:index]
       resources :users do
           collection do
               resources :sessions, only: [:create] do
