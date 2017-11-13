@@ -35,6 +35,8 @@ gem 'versionist'
 gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'wor-paginate'
+
+gem 'wor-authentication'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

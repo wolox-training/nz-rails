@@ -248,6 +248,11 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    wor-authentication (0.2.2)
+      devise (>= 4.2.0)
+      jwt (~> 2.0)
+      rails (>= 4.0)
+      railties (>= 4.1.0, < 5.2)
     wor-paginate (0.1.1)
       rails (>= 4.0)
       railties (>= 4.1.0, < 5.2)
@@ -286,6 +291,7 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   versionist
   web-console (>= 3.3.0)
+  wor-authentication
   wor-paginate
 
 BUNDLED WITH
