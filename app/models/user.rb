@@ -7,10 +7,5 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  # Hooks
-  before_validation :generate_verification_code, on: :create
 
-  def generate_verification_code
-    self.verification_code = AuthenticableEntity.verification_code
-  end
 end
