@@ -11,8 +11,6 @@ RSpec.shared_context 'Authenticated User' do
   end
 end
 
-
-
 describe Api::V1::BooksController, type: :controller do
   include_context 'Authenticated User'
   include Devise::Test::ControllerHelpers
@@ -40,10 +38,10 @@ describe Api::V1::BooksController, type: :controller do
 
   describe 'GET #show' do
     context 'When fetching a book' do
-      let!(:book) {create(:book)}
+      let!(:book) { create(:book) }
 
       before do
-       get :show, params: { user_id: user.id, id: book.id }
+        get :show, params: { user_id: user.id, id: book.id }
       end
 
       it 'responses with the user book json' do
@@ -55,7 +53,6 @@ describe Api::V1::BooksController, type: :controller do
       it 'responds with 200 status' do
         expect(response).to have_http_status(:ok)
       end
-
     end
   end
 end
