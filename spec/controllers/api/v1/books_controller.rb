@@ -37,4 +37,25 @@ describe Api::V1::BooksController, type: :controller do
       end
     end
   end
+
+  describe 'GET #show' do
+    context 'When fetching a book' do
+      let!(:book) {create(:book)}
+
+      before do
+       get :show, params: { user_id: user.id, id: book.id }
+      end
+
+      it 'responses with the user book json' do
+        expect(response.body).to eq BookSerializer.new(
+          book, root: false
+        ).to_json
+      end
+
+      it 'responds with 200 status' do
+        expect(response).to have_http_status(:ok)
+      end
+
+    end
+  end
 end
