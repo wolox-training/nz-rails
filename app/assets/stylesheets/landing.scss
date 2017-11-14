@@ -1,16 +1,10 @@
-.banner {
-  background-color: $orange;
-  display: block;
-  height: 30px;
-  width: auto;
-}
-
 .main-section {
+  border-top: 15px solid $orange;
+  width: auto;
   align-items: center;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 40px;
 
   .gradient-line {
     background: linear-gradient(0deg, $white, $orange 40%, $white);
