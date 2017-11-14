@@ -51,6 +51,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'scss_lint', require: false
   gem 'factory_bot'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -63,7 +64,6 @@ group :development do
 end
 
 group :test do
-  gem 'database_cleaner'
   gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
   gem 'shoulda-matchers', '~> 3.0', require: false
 end
