@@ -2,8 +2,12 @@ module Api
   module V1
     class UsersController < AuthenticationController
       def create
-        @user = User.create(user_params)
-        render json: '', status: :ok
+        @user = User.new(user_params)
+        if @user.save
+          render :json => @user
+        else
+          render :json => { :errors => @user.errors.full_messages }
+        end
       end
 
       private def user_params
