@@ -1,11 +1,11 @@
 .main-section {
-  border-top: 15px solid $orange;
-  width: auto;
   align-items: center;
+  border-top: 15px solid $orange;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   padding: 20px;
+  width: auto;
 
   .gradient-line {
     background: linear-gradient(0deg, $white, $orange 40%, $white);
