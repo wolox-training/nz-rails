@@ -21,17 +21,16 @@ ActiveAdmin.register Rent do
       f.input :user
       f.input :book
       f.input :from, as: :datepicker,
-                      datepicker_options: {
-                        min_date: "2013-10-8",
-                        max_date: "+3D"
-                      }
+                     datepicker_options: {
+                       min_date: '2013-10-8',
+                       max_date: '+3D'
+                     }
 
       f.input :to, as: :datepicker,
-                    datepicker_options: {
-                      min_date: "2013-10-8"
-                    }
+                   datepicker_options: {
+                     min_date: '2013-10-8'
+                   }
     end
     f.actions
   end
-
 end

@@ -10,6 +10,6 @@ class User < ApplicationRecord
   has_many :rents, dependent: :destroy
 
   def name
-    self.email
+    email
   end
 end

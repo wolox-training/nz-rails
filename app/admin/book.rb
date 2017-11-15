@@ -31,5 +31,4 @@ ActiveAdmin.register Book do
     end
     f.actions
   end
-
 end
