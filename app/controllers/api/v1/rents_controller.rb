@@ -13,12 +13,12 @@ module Api
         if @rent.save
           render json: @rent
         else
-          render json: { errors: @rent.errors.full_messages },status: 400
+          render json: { errors: @rent.errors.full_messages }, status: 400
         end
       end
 
       private def rent_params
-        params.required(:rent).permit(:user_id,:book_id,:from,:to)
+        params.required(:rent).permit(:user_id, :book_id, :from, :to)
       end
     end
   end
