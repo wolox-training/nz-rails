@@ -1,11 +1,11 @@
 ActiveAdmin.register Rent do
-  permit_params :user, :book, :to, :from
+  permit_params :user_id, :book_id, :to, :from
 
   index do
     selectable_column
     id_column
     column :user
-    column :book
+    column :book_id
     column :from
     column :to
     actions
@@ -18,8 +18,8 @@ ActiveAdmin.register Rent do
 
   form do |f|
     f.inputs do
-      f.input :user_id
-      f.input :book_id
+      f.input :user
+      f.input :book
       f.input :from, as: :datepicker,
                       datepicker_options: {
                         min_date: "2013-10-8",
