@@ -13,11 +13,11 @@ module Api
 
       private def book_params
         params.permit(:author,
-          :title,
-          :genre,
-          :year,
-          :image,
-          :author)        
+                      :title,
+                      :genre,
+                      :year,
+                      :image,
+                      :author)
       end
     end
   end
