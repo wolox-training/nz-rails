@@ -1,6 +1,6 @@
 module Api
   module V1
-    class AuthenticationController < ApplicationController
+    class AuthenticationController < ApiController
       include Wor::Authentication::SessionsController
       skip_before_action :authenticate_request, only: [:create]
 
