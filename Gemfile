@@ -63,6 +63,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'scss_lint', require: false
   gem 'factory_bot'
+
+  gem 'dotenv-rails'
 end
 
 group :development do
