@@ -1,10 +1,11 @@
 class UserMailer < ApplicationMailer
-  def rent_finished_notification(email,book,from,to)
-    @book=book
-    @from=from
-    @to=to
-    mail(to: 'nzacsscrewsky@gmail.com',from: Rails.application.secrets.user_name, subject: "Rent information") do |format|
-     format.html { render "rent_finished_notification" }
+  def rent_finished_notification(rent_id)
+    rent = Rent.find(rent_id)
+    @book = rent.book
+    @from = rent.from
+    @to = rent.to
+    mail(to: rent.user.email, subject: "Rent information") do |format|
+      format.html {render 'rent_finished_notification'}
     end
   end
 end
