@@ -1,16 +1,15 @@
-.banner {
-  background-color: $orange;
-  display: block;
-  height: 30px;
-  width: auto;
+.body {
+  display: flex;
+  flex-direction: column;
 }
 
 .main-section {
   align-items: center;
+  border-top: 15px solid $orange;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 40px;
+  padding: 20px;
 
   .gradient-line {
     background: linear-gradient(0deg, $white, $orange 40%, $white);
@@ -66,5 +65,7 @@
 
 @media only screen and (max-width: 768px) {
   .phone,
-  .gradient-line { display: none;}
+  .gradient-line {
+    display: none;
+  }
 }
