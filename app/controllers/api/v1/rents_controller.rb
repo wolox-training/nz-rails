@@ -2,7 +2,6 @@ module Api
   module V1
     class RentsController < ApiController
       include Wor::Paginate
-      skip_before_action :authenticate_request, only: [:create]
 
       def index
         render_paginated Rent.where(user: params[:user_id])
