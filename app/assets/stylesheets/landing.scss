@@ -1,0 +1,27 @@
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-section {
+  align-items: center;
+  border-top: 15px solid $orange;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 20px;
+
+  .gradient-line {
+    background: linear-gradient(0deg, $white, $orange 40%, $white);
+    height: 400px;
+    margin: 0 50px;
+    width: 5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .phone,
+  .gradient-line {
+    display: none;
+  }
+}
