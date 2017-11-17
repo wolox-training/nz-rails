@@ -11,7 +11,7 @@ module Api
       def create
         @rent = Rent.new(rent_params)
         if @rent.save
-          UserMailer.new.new_rent_notification(@rent.id).deliver
+          AsyncMailerWorker.perform_async(UserMailer.new.new_rent_notification(@rent.id).deliver)
           render json: @rent
         else
           render json: { errors: @rent.errors.full_messages }, status: 400
