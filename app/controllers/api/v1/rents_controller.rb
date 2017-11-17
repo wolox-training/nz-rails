@@ -11,7 +11,7 @@ module Api
       def create
         @rent = Rent.new(rent_params)
         if @rent.save
-          UserMailer.new.new_rent_notification(@rent.id).deliver_later
+          UserMailer.new.new_rent_notification(@rent.id).deliver
           render json: @rent
         else
           render json: { errors: @rent.errors.full_messages }, status: 400
@@ -21,7 +21,9 @@ module Api
       def email_user(rent_params)
         mailer = UserMailer.new
         mailer.rent_finished_notification(rent_params[:user_id],
-                                          rent_params[:book_id], rent_params[:rent_from], rent_params[:rent_to])
+                                          rent_params[:book_id],
+                                          rent_params[:rent_from],
+                                          rent_params[:rent_to])
       end
 
       private def rent_params

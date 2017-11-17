@@ -53,12 +53,12 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :user_name => '7a73792a2ca6e7',
-  :password => 'ac4e1eb2a1eb84',
-  :address => 'smtp.mailtrap.io',
-  :domain => 'smtp.mailtrap.io',
-  :port => '2525',
-  :authentication => :cram_md5
+  :user_name => Rails.application.secrets.mailer_username,
+  :password => Rails.application.secrets.mailer_password,
+  :address => Rails.application.secrets.mailer_address,
+  :domain => Rails.application.secrets.mailer_domain,
+  :port => Rails.application.secrets.mailer_port,
+  :authentication => Rails.application.secrets.mailer_authentication
 }
 
 

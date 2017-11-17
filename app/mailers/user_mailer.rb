@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  def rent_finished_notification(rent_id)
+  def new_rent_notification(rent_id)
     rent = Rent.find(rent_id)
     @book = rent.book
     @from = rent.from
