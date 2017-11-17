@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  has_many :rents
+  has_many :rents, dependent: :destroy
   validates :genre, presence: true
   validates :author, presence: true
   validates :image, presence: true
