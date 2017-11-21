@@ -3,7 +3,7 @@ class RentPolicy
 
   def initialize(current_user, model)
     @current_user = current_user
-    @user = model
+    @rent = model
   end
 
   def index?
@@ -16,6 +16,7 @@ class RentPolicy
 
   private
     def simple_authorziation
-      @current_user.admin? || @current_user == @user
+      byebug
+      @current_user == @rent.first.user
     end
 end

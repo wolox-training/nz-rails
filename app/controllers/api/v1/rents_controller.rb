@@ -6,8 +6,8 @@ module Api
 
       def index
         @user = Rent.where(user: params[:user_id])
-        render_paginated Rent.where(user: params[:user_id])
         authorize @user
+        render_paginated Rent.where(user: params[:user_id])
       end
 
       def create
@@ -30,13 +30,14 @@ module Api
                                           rent_params[:rent_to])
       end
 
-      private def rent_params
-        params.required(:rent).permit(:user_id, :book_id, :from, :to)
-      end
+      private
+        def rent_params
+          params.required(:rent).permit(:user_id, :book_id, :from, :to)
+        end
 
-      private def established_locale(id)
-        I18n.locale = User.find(id).locale || I18n.default_locale
-      end
+        def established_locale(id)
+          I18n.locale = User.find(id).locale || I18n.default_locale
+        end
     end
   end
 end
