@@ -10,6 +10,7 @@ module Api
 
       def create
         @rent = Rent.new(rent_params)
+        set_locale(@rent.user_id)
         if @rent.save
           AsyncMailerWorker.perform_async(UserMailer.new.new_rent_notification(@rent.id).deliver)
           render json: @rent
@@ -28,6 +29,10 @@ module Api
 
       private def rent_params
         params.required(:rent).permit(:user_id, :book_id, :from, :to)
+      end
+
+      private def set_locale(id)
+        I18n.locale = User.find(id).locale || I18n.default_locale
       end
     end
   end
