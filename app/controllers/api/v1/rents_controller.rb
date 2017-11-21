@@ -15,8 +15,7 @@ module Api
         established_locale(@rent.user_id)
         authorize @rent.user_id
         if @rent.save
-          AsyncMailerWorker.perform_async(UserMailer.new.new_rent_notification(@rent.id).deliver)
-          render json: @rent
+          send_mail(@rent)
         else
           render json: { errors: @rent.errors.full_messages }, status: 400
         end
@@ -31,13 +30,19 @@ module Api
       end
 
       private
-        def rent_params
-          params.required(:rent).permit(:user_id, :book_id, :from, :to)
-        end
 
-        def established_locale(id)
-          I18n.locale = User.find(id).locale || I18n.default_locale
-        end
+      def rent_params
+        params.required(:rent).permit(:user_id, :book_id, :from, :to)
+      end
+
+      def established_locale(id)
+        I18n.locale = User.find(id).locale || I18n.default_locale
+      end
+
+      def send_mail(rent)
+        AsyncMailerWorker.perform_async(UserMailer.new.new_rent_notification(rent.id).deliver)
+        render json: rent
+      end
     end
   end
 end

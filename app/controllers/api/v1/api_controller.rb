@@ -16,7 +16,6 @@ module Api
         User.find_by(email: entity_payload_returned_object.fetch(ENTITY_KEY))
       end
 
-
       def current_user
         current_entity
       end

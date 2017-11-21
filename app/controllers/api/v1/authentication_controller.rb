@@ -10,7 +10,6 @@ module Api
         return nil unless entity.present? && entity.valid_password?(params[:password])
         entity
       end
-
     end
   end
 end

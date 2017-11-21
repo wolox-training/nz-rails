@@ -15,8 +15,8 @@ class RentPolicy
   end
 
   private
-    def simple_authorziation
-      byebug
-      @current_user == @rent.first.user
-    end
+
+  def simple_authorziation
+    @current_user == @rent.first.user
+  end
 end
