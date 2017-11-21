@@ -1,9 +1,10 @@
 <h1><%= I18n.t :rent_created %></h1>
 
-<p><%= I18n.t('rent_for_the_book',title: @book.title) %>.
-  <%= I18n.t('author',author: @book.author) %>
-  <%= I18n.t('publisher',publisher: @book.publisher) %>
-  <%= I18n.t('genre',genre: @book.genre) %>
+<p>
+  <%= I18n.t('rent_for_the_book',title: @book.title) %> <br>
+  <%= I18n.t('author',author: @book.author) %> <br>
+  <%= I18n.t('publisher',publisher: @book.publisher) %> <br>
+  <%= I18n.t('genre',genre: @book.genre) %> <br>
 </p>
 <p>
   <%= I18n.t('rent_time',from: @from, to: @to) %>
