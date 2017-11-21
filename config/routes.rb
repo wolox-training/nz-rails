@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "landing#index"
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   api_version(module: 'api/v1', path: { value: 'api/v1' }, defaults: { format: :json }) do
       resources :books, only: [:show, :index]
       resources :users do
+          resources :rents
           collection do
               resources :sessions, only: [:create] do
                   collection do
