@@ -5,12 +5,15 @@ module Api
       include Wor::Paginate
 
       def index
+        @user = Rent.where(user: params[:user_id])
         render_paginated Rent.where(user: params[:user_id])
+        authorize @user
       end
 
       def create
         @rent = Rent.new(rent_params)
         established_locale(@rent.user_id)
+        authorize @rent.user_id
         if @rent.save
           AsyncMailerWorker.perform_async(UserMailer.new.new_rent_notification(@rent.id).deliver)
           render json: @rent
