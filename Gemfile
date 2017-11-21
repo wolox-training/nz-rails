@@ -32,7 +32,17 @@ gem 'devise'
 
 gem 'versionist'
 
+gem 'active_model_serializers', '~> 0.10.0'
+
+gem 'wor-paginate'
+
 gem 'wor-authentication'
+
+gem 'activeadmin'
+
+gem 'cancan'
+gem 'draper'
+gem 'pundit'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
