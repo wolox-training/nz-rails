@@ -7,16 +7,16 @@ class RentPolicy
   end
 
   def index?
-    simple_authorziation
+    simple_authorization
   end
 
   def create?
-    simple_authorziation
+    simple_authorization
   end
 
   private
 
-  def simple_authorziation
+  def simple_authorization
     @current_user == @rent.first.user
   end
 end
