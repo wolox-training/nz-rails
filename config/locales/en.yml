@@ -1,4 +1,5 @@
 en:
+  rent_creation_subject: 'Rent creation'
   rent_created: 'You have a create a new book rent!'
   rent_for_the_book: 'The rent for the book %{title}'
   author: 'Author: %{author}'

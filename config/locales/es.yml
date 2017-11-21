@@ -1,4 +1,5 @@
-en:
+es:
+  rent_creation_subject: 'Alquiler creado'
   rent_created: '¡Has creado un nuevo alquiler de libro!'
   rent_for_the_book: 'El alquiler para el libro %{title}'
   author: 'Autor: %{author}'

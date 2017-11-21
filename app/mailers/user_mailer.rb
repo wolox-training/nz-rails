@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
     @book = rent.book
     @from = rent.from
     @to = rent.to
-    mail(to: rent.user.email, subject: 'Rent information') do |format|
+    mail(to: rent.user.email, subject: I18n.t(:rent_creation_subject)) do |format|
       format.html { render 'rent_finished_notification' }
     end
   end
