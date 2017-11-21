@@ -29,6 +29,20 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim'
 
 gem 'devise'
+
+gem 'versionist'
+
+gem 'active_model_serializers', '~> 0.10.0'
+
+gem 'wor-paginate'
+
+gem 'wor-authentication'
+
+gem 'activeadmin'
+
+gem 'cancan'
+gem 'draper'
+gem 'pundit'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -46,6 +60,8 @@ group :development, :test do
   gem 'rubocop', '~> 0.51.0', require: false
   gem 'rspec-rails', '~> 3.6'
   gem 'scss_lint', require: false
+  gem 'factory_bot'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -55,6 +71,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+  gem 'shoulda-matchers', '~> 3.0', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
