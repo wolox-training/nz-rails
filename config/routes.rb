@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   api_version(module: 'api/v1', path: { value: 'api/v1' }, defaults: { format: :json }) do
       resources :books, only: [:show, :index]
       resources :users do
-        devise_for :users
+          resources :rents
           collection do
               resources :sessions, only: [:create] do
                   collection do
