@@ -22,13 +22,20 @@ describe Api::V1::BookSuggestionsController, type: :controller do
 
      it 'creates a new book suggestion' do
        expect do
-         post :create, params: { id: user.id, rent: new_rent_attributes }
+         post :create, params: { book_suggestion: {
+           title: book_suggestion.title,
+           author: book_suggestion.author,
+           link: book_suggestion.link } }
        end.to change { BookSuggestion.count }.by(1)
      end
 
      it 'responds with 201 status' do
-       post :create, params: { id: user.id, rent: new_rent_attributes }
+       post :create, params: { book_suggestion: {
+         title: book_suggestion.title,
+         author: book_suggestion.author,
+         link: book_suggestion.link } }
        expect(response).to have_http_status(:created)
      end
    end
+ end
 end

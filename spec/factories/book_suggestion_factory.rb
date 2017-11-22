@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :valid_book_suggestion do
+  factory :book_suggestion do
     editorial {Faker::Fillmurray.image}
     price  {Faker::Commerce.price}
     author {Faker::Book.author}
