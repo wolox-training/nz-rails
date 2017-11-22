@@ -4,7 +4,8 @@ module Api
       include Wor::Authentication::Controller
       include Pundit
       protect_from_forgery
-      before_action :authenticate_request
+      before_action :authenticate_request, except: [:create]
+
 
       ENTITY_KEY = :email
 
@@ -13,12 +14,13 @@ module Api
       end
 
       def find_authenticable_entity(entity_payload_returned_object)
-        User.find_by(email: entity_payload_returned_object.fetch(ENTITY_KEY))
+       @current_user ||= User.find_by(email: entity_payload_returned_object.fetch(ENTITY_KEY))
       end
 
       def current_user
-        current_entity
+        @current_user
       end
+
     end
   end
 end
