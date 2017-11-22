@@ -1,24 +1,21 @@
 module Api
   module V1
     class BookSuggestionsController < ApiController
-      skip_before_action :authenticate_request, only: [:create]
+      include Wor::Paginate
 
       def create
-        @book_suggestion = Bookuggestion.new(book_suggestion_param,
-          user:current_user,
-          year:params[:year],
-          editorial:params[:editorial],
-          publisher:params[:publisher],
-          price:params[:price])
-          if @book_suggestion.
-            render json: '', status: :ok
+        @book_suggestion = BookSuggestion.new(book_suggestion_param
+          .merge(user_id: current_entity.id))
+          if @book_suggestion.save
+            render json: @book_suggestion, status: :ok
           else
             render json: { errors: @book_suggestion.errors.full_messages }, status: 201
           end
       end
 
       private def book_suggestion_param
-        params.require(:book_suggestion).permit(:author,:title,:link)
+        params.require(:book_suggestion).permit(:author,:title,:link,:year,:publisher,:editorial,:price)
+
       end
     end
   end
