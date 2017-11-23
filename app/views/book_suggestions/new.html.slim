@@ -26,3 +26,31 @@ h1
   br
   = f.submit "Create", remote: true
 end
+
+  table
+    tr
+      th Title
+      th Author
+      th Link
+      th Year
+      th Publisher
+      th Editorial
+      th Price
+
+      - @all_book_suggestion.each do |book_suggestion|
+        tr
+          td
+            =book_suggestion.title
+          td
+            =book_suggestion.author
+          td
+            =book_suggestion.link
+          td
+            =book_suggestion.year
+          td
+            =book_suggestion.publisher
+          td
+            =book_suggestion.editorial
+          td
+            =book_suggestion.price
+  end
