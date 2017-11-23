@@ -3,10 +3,9 @@ module Api
     class BookSuggestionsController < ApiController
       include Wor::Paginate
 
-
       def create
         @book_suggestion = BookSuggestion.new(book_suggestion_param
-          .merge(user_id: current_entity.id))
+          .merge(user_id: get_current_user_id))
         if @book_suggestion.save
           render json: @book_suggestion, status: 201
         else
@@ -24,6 +23,12 @@ module Api
           :editorial,
           :price
         )
+      end
+
+      private def get_current_user_id
+        current_entity.id
+      rescue Wor::Authentication::Exceptions::MissingAuthorizationHeader
+        nil
       end
     end
   end

@@ -1,2 +1,27 @@
 h1
-  | Book Suggestion
+  | ¿Do you have any book suggestion?
+= form_for @book_suggestion, url: api_v1_book_suggestions_path, html: {class: "nifty_form"} do |f|
+  p Author:
+  = f.text_area :author, size: "15x5"
+  br
+  p Title:
+  = f.text_area :title, size: "15x5"
+  br
+  p Link:
+  = f.text_area :link, size: "15x5"
+  br
+  p Year:
+  = f.text_area :year, size: "15x5"
+  br
+  p Publisher:
+  = f.text_area :publisher, size: "15x5"
+  br
+  p Editorial:
+  = f.text_area :editorial, size: "15x5"
+  br
+  p Price:
+  = f.text_area :price, size: "15x5"
+  br
+  br
+  = f.submit "Create"
+end

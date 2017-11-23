@@ -5,6 +5,8 @@ class BookSuggestionsController < Api::V1::BookSuggestionsController
       protect_from_forgery with: :exception
 
       def new
+        @book_suggestion = BookSuggestion.new
+
       end
 
 end
