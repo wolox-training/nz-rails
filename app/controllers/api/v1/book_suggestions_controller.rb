@@ -3,6 +3,7 @@ module Api
     class BookSuggestionsController < ApiController
       include Wor::Paginate
 
+
       def create
         @book_suggestion = BookSuggestion.new(book_suggestion_param
           .merge(user_id: current_entity.id))
