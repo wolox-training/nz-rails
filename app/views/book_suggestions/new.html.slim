@@ -1,6 +1,7 @@
 h1
   | ¿Do you have any book suggestion?
-= form_for @book_suggestion, url: api_v1_book_suggestions_path, html: {class: "nifty_form"} do |f|
+  br
+= form_with(model: @book_suggestion, url: api_v1_book_suggestions_path) do |f|
   p Author:
   = f.text_area :author, size: "15x5"
   br
@@ -23,5 +24,5 @@ h1
   = f.text_area :price, size: "15x5"
   br
   br
-  = f.submit "Create"
+  = f.submit "Create", remote: true
 end
