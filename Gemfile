@@ -43,6 +43,8 @@ gem 'activeadmin'
 gem 'cancan'
 gem 'draper'
 gem 'pundit'
+
+gem 'sidekiq'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -61,7 +63,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'scss_lint', require: false
   gem 'factory_bot'
+  gem 'dotenv-rails'
   gem 'database_cleaner'
+
 end
 
 group :development do
