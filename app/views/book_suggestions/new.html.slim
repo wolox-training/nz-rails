@@ -1,36 +1,36 @@
   header class="navbar navbar-expand-md navbar-dark bg-dark"
-    h1 class="navbar-brand"
-      | ¿Do you have any book suggestion?
+    a class="navbar-brand" href="#"
+      | Do you have any book suggestion?
     button class="navbar-toggler collapsed"
   = form_with(model: @book_suggestion, url: api_v1_book_suggestions_path) do |f|
     br
     div class="form-group row"
-      label class="col-2 col-form-label" style="text-align:center" Author:
+      label class="col-2 col-form-label" style="text-align:center" Author
       div class="col-10"
         = f.text_field :author, class:"form-control"
 
     div class="form-group row"
-      label class="col-2 col-form-label" style="text-align:center" Title:
+      label class="col-2 col-form-label" style="text-align:center" Title
       div class="col-10"
         = f.text_field :title, class:"form-control"
 
     div class="form-group row"
-      label class="col-2 col-form-label" style="text-align:center" Link:
+      label class="col-2 col-form-label" style="text-align:center" Link
       div class="col-10"
         = f.text_field :link, class:"form-control"
 
     div class="form-group row"
-      label class="col-2 col-form-label" style="text-align:center" Year:
+      label class="col-2 col-form-label" style="text-align:center" Year
       div class="col-10"
         = f.number_field :year, class:"form-control"
 
     div class="form-group row"
-      label class="col-2 col-form-label" style="text-align:center" Publisher:
+      label class="col-2 col-form-label" style="text-align:center" Publisher
       div class="col-10"
         = f.text_field :publisher, class:"form-control"
 
     div class="form-group row"
-      label class="col-2 col-form-label" style="text-align:center" Editorial:
+      label class="col-2 col-form-label" style="text-align:center" Editorial
       div class="col-10"
         = f.text_field :editorial, class:"form-control"
 
