@@ -1,41 +1,58 @@
-h1
-  | ¿Do you have any book suggestion?
-  br
-= form_with(model: @book_suggestion, url: api_v1_book_suggestions_path) do |f|
-  p Author:
-  = f.text_field :author
-  br
-  p Title:
-  = f.text_field :title
-  br
-  p Link:
-  = f.text_field :link
-  br
-  p Year:
-  = f.number_field :year
-  br
-  p Publisher:
-  = f.text_field :publisher
-  br
-  p Editorial:
-  = f.text_field :editorial
-  br
-  p Price:
-  = f.number_field :price, step: :any
-  br
-  br
-  = f.submit "Create", remote: true
-end
+  header class="navbar navbar-expand-md navbar-dark bg-dark"
+    h1 class="navbar-brand"
+      | ¿Do you have any book suggestion?
+    button class="navbar-toggler collapsed"
+  = form_with(model: @book_suggestion, url: api_v1_book_suggestions_path) do |f|
+    br
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Author:
+      div class="col-10"
+        = f.text_field :author, class:"form-control"
 
-  table
-    tr
-      th Title
-      th Author
-      th Link
-      th Year
-      th Publisher
-      th Editorial
-      th Price
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Title:
+      div class="col-10"
+        = f.text_field :title, class:"form-control"
+
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Link:
+      div class="col-10"
+        = f.text_field :link, class:"form-control"
+
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Year:
+      div class="col-10"
+        = f.number_field :year, class:"form-control"
+
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Publisher:
+      div class="col-10"
+        = f.text_field :publisher, class:"form-control"
+
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Editorial:
+      div class="col-10"
+        = f.text_field :editorial, class:"form-control"
+
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Price:
+      div class="col-10"
+        = f.number_field :price, step: :any, class:"form-control"
+    br
+    div style="text-align:center"
+      = f.submit "Create", remote: true, class:"btn btn-primary",align:"center"
+    br
+  end
+
+  table class="table"
+    tr class="thead-dark"
+      th scope="col" Title
+      th scope="col" Author
+      th scope="col" Link
+      th scope="col" Year
+      th scope="col" Publisher
+      th scope="col" Editorial
+      th scope="col" Price
 
       - @all_book_suggestion.each do |book_suggestion|
         tr
