@@ -21,7 +21,6 @@ module Api
         end
       end
 
-
       private def rent_params
         params.required(:rent).permit(:user_id, :book_id, :from, :to)
       end
