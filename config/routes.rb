@@ -7,19 +7,19 @@ Rails.application.routes.draw do
   root to: "landing#index"
 
   api_version(module: 'api/v1', path: { value: 'api/v1' }, defaults: { format: :json }) do
-      resources :books, only: [:show, :index]
-      resources :users do
-          resources :rents
-          collection do
-              resources :sessions, only: [:create] do
-                  collection do
-                    post '/' => 'authentication#create'
-                    post '/renew' => 'authentication#renew'
-                    post '/invalidate_all' => 'authentication#invalidate_all'
-                  end
-              end
+    resources :books, only: [:show, :index]
+    resources :users do
+      resources :rents
+      collection do
+          resources :sessions, only: [:create] do
+            collection do
+              post '/' => 'authentication#create'
+              post '/renew' => 'authentication#renew'
+              post '/invalidate_all' => 'authentication#invalidate_all'
+            end
           end
       end
+    end
   end
 
 end
