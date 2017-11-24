@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+* {
+  font-family: $font;
+}
+
 .main-section {
   align-items: center;
   border-top: 15px solid $orange;
@@ -16,6 +20,46 @@
     height: 400px;
     margin: 0 50px;
     width: 5px;
+  }
+}
+
+
+.feature-section {
+  align-items: center;
+  background-color: $light-grey;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  position: relative;
+
+  &::before {
+    background-image: image-url('triangle.png');
+    background-repeat: repeat;
+    content: '';
+    height: 12px;
+    position: absolute;
+    top: -12px;
+    width: 100%;
+  }
+
+  .item {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 30px;
+    padding-top: 10px;
+
+    .title {
+      color: $dark-grey;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    .text {
+      color: $gray;
+      text-align: center;
+      width: 200px;
+    }
   }
 }
 
