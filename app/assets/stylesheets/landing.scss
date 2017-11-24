@@ -67,7 +67,7 @@
 .footer-section {
   align-items: center;
   background-color: $orange;
-  box-shadow: 0 -8px 20px 0 rgba(120, 120, 120, 0.43);
+  box-shadow: 0 -8px 20px 0 $shadow-grey;
   display: flex;
   flex-direction: column;
   padding: 12vh;
@@ -81,10 +81,11 @@
 
   .footer-input {
     border-radius: 5px;
-    margin-top: 20px;
-    min-height: 30px;
-    width: 100%; max-width: 300px;
     margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 300px;
+    min-height: 30px;
+    width: 100%;
   }
 
   .footer-button {
