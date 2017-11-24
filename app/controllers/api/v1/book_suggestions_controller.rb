@@ -1,7 +1,6 @@
 module Api
   module V1
     class BookSuggestionsController < ApiController
-      include Wor::Paginate
 
       def create
         @book_suggestion = BookSuggestion.new(book_suggestion_param
