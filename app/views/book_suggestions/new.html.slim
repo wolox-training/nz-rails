@@ -3,25 +3,25 @@ h1
   br
 = form_with(model: @book_suggestion, url: api_v1_book_suggestions_path) do |f|
   p Author:
-  = f.text_area :author, size: "15x5"
+  = f.text_field :author
   br
   p Title:
-  = f.text_area :title, size: "15x5"
+  = f.text_field :title
   br
   p Link:
-  = f.text_area :link, size: "15x5"
+  = f.text_field :link
   br
   p Year:
-  = f.text_area :year, size: "15x5"
+  = f.number_field :year
   br
   p Publisher:
-  = f.text_area :publisher, size: "15x5"
+  = f.text_field :publisher
   br
   p Editorial:
-  = f.text_area :editorial, size: "15x5"
+  = f.text_field :editorial
   br
   p Price:
-  = f.text_area :price, size: "15x5"
+  = f.number_field :price, step: :any
   br
   br
   = f.submit "Create", remote: true
