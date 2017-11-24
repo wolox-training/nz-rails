@@ -21,17 +21,8 @@ module Api
         end
       end
 
-      def email_user(rent_params)
-        mailer = UserMailer.new
-        mailer.rent_finished_notification(rent_params[:user_id],
-                                          rent_params[:book_id],
-                                          rent_params[:rent_from],
-                                          rent_params[:rent_to])
-      end
 
-      private
-
-      def rent_params
+      private def rent_params
         params.required(:rent).permit(:user_id, :book_id, :from, :to)
       end
 
