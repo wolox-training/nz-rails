@@ -3,6 +3,10 @@ module Api
     class UsersController < ApiController
       skip_before_action :authenticate_request, only: [:create]
 
+      def index
+        render_paginate BookSuggestion
+      end
+
       def create
         @user = User.create(user_params)
         render json: '', status: :ok

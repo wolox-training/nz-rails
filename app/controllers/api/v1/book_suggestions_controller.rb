@@ -3,6 +3,11 @@ module Api
     class BookSuggestionsController < ApiController
       include Wor::Paginate
 
+      def index
+        render_paginate BookSuggestion
+      end
+
+
       def create
         @book_suggestion = BookSuggestion.new(book_suggestion_param
           .merge(user_id: current_user_id))
@@ -12,6 +17,7 @@ module Api
           render json: { errors: @book_suggestion.errors.full_messages }, status: 400
         end
       end
+
 
       private def book_suggestion_param
         params.require(:book_suggestion).permit(
