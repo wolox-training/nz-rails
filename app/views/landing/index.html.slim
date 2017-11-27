@@ -24,8 +24,11 @@ header.banner
     .text
       | All your debts are kept safe in your room.
 .footer-section
-  .footer-text
-    | Get info on new updates
-  input.footer-input
-  button.footer-button
-    = link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path
+  - if @user.nil?
+    button.footer-button type='submit'
+      = link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path
+  - else
+    button.footer-button
+      = link_to "Sign out", destroy_user_session_path, method: :delete
+    button.footer-button
+      | Hola #{@user.name}
