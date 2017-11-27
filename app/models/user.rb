@@ -16,14 +16,13 @@ class User < ApplicationRecord
 
   def self.from_omniauth(access_token)
     data = access_token.info
-    user = User.find_by(email: data['email'])
+    User.find_by(email: data['email'])
 
-    user = User.create(first_name: data['first_name'],
-          last_name: data['last_name'],
-          email: data['email'],
-          password: '123123123',
-          password_confirmation: '123123123',
-          locale: 'es'
-        )
+    User.create(first_name: data['first_name'],
+                last_name: data['last_name'],
+                email: data['email'],
+                password: '123123123',
+                password_confirmation: '123123123',
+                locale: 'es')
   end
 end

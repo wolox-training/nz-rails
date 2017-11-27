@@ -8,6 +8,3 @@
     Exclude:
       - 'spec/**/*.rb'
       - 'app/admin/*.rb'
-  Metrics/AbcSize:
-    Exclude:
-      - 'app/controllers/users/*.rb'
