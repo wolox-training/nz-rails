@@ -5,7 +5,7 @@ module Api
         @book_suggestion = BookSuggestion.new(book_suggestion_param
           .merge(user_id: current_entity.id))
         if @book_suggestion.save
-          render json: @book_suggestion, status: :ok
+          render json: @book_suggestion, status: :created
         else
           render json: { errors: @book_suggestion.errors.full_messages }, status: :bad_request
         end
