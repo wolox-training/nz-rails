@@ -8,4 +8,7 @@ $(document).ready(function(){
                         "</td><td>" + $("input[name='book_suggestion[editorial]'").val() +
                         "</td><td>" + $("input[name='book_suggestion[price]'").val() +"</td></tr>");
   });
+  $(document).bind("ajax:error",function(e){
+    alert(e.originalEvent.detail[0].errors[0]);
+  });
 });
