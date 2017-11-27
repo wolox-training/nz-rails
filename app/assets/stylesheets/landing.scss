@@ -15,6 +15,7 @@
   justify-content: center;
   padding: 20px;
 
+
   .gradient-line {
     background: linear-gradient(0deg, $white, $orange 40%, $white);
     height: 400px;
@@ -56,11 +57,51 @@
     }
 
     .text {
-      color: $gray;
+      color: $grey;
       text-align: center;
       width: 200px;
     }
   }
+}
+
+.footer-section {
+  align-items: center;
+  background-color: $orange;
+  box-shadow: 0 -8px 20px 0 $shadow-grey;
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  z-index: 1;
+
+  .footer-text {
+    color: $white;
+    font: $font;
+    font-size: 20px;
+  }
+
+  .footer-input {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 300px;
+    min-height: 30px;
+    width: 100%;
+  }
+
+  .footer-button {
+    border: 1px solid $white;
+    border-radius: 10px;
+    color: $white;
+    font: $font;
+    font-size: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    padding: 10px;
+  }
+}
+
+form {
+  text-align: center;
 }
 
 @media only screen and (max-width: 768px) {

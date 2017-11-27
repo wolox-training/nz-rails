@@ -4,21 +4,29 @@ body.body
     .gradient-line
     = image_tag 'tcg_logo.png', class: 'logo'
 .feature-section
-    .item
-      = image_tag 'ic_list.png'
-      h1.title
-        | Keep track of your money
-      p.text
-        | See all your debts and all your friends debts towards you.
-    .item
-      = image_tag 'ic_reminder.png'
-      h1.title
-        | Generate reminders
-      p.text
-        | Get reminded of who owes you money or who you owe money to.
-    .item
-      = image_tag 'ic_safe.png'
-      h1.title
-        | No internet needed
-      p.text
-        | All your debts are kept safe in your room.
+  .item
+    = image_tag 'ic_list.png'
+    h1.title
+      | Keep track of your money
+    p.text
+      | See all your debts and all your friends debts towards you.
+  .item
+    = image_tag 'ic_reminder.png'
+    h1.title
+      | Generate reminders
+    p.text
+      | Get reminded of who owes you money or who you owe money to.
+  .item
+    = image_tag 'ic_safe.png'
+    h1.title
+      | No internet needed
+    p.text
+      | All your debts are kept safe in your room.
+
+.footer-section
+  h1.footer-text
+    | Get info on new updates
+  form
+    input.footer-input type='email'
+    button.footer-button type='submit'
+      | Subscribe
