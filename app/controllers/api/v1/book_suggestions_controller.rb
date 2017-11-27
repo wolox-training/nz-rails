@@ -7,7 +7,7 @@ module Api
         if @book_suggestion.save
           render json: @book_suggestion, status: :ok
         else
-          render json: { errors: @book_suggestion.errors.full_messages }, status: 201
+          render json: { errors: @book_suggestion.errors.full_messages }, status: :bad_request
         end
       end
 
