@@ -3,3 +3,8 @@
 
   LineLength:
     Max: 99
+
+  BlockLength:
+    Exclude:
+      - 'spec/**/*.rb'
+      - 'app/admin/*.rb'

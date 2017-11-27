@@ -1,0 +1,11 @@
+es:
+  views:
+    rent_mailer:
+      subject: '¡Has creado un nuevo alquiler de libro!'
+      header: 'Alquiler creado'
+      title: 'El alquiler para el libro %{title}'
+      author: 'Autor: %{author}'
+      publisher: 'Publicado por: %{publisher}'
+      genre: 'Genero: %{genre}'
+      rent_creation_time: 'El alquiler fue creado: %{time_now}'
+      rent_time: 'El alquiler tiene una vigencia desde: %{from} al: %{to}'
