@@ -15,8 +15,6 @@ module Api
       def find_authenticable_entity(entity_payload_returned_object)
         @current_user ||= User.find_by(email: entity_payload_returned_object.fetch(ENTITY_KEY))
       end
-
-      attr_reader :current_user
     end
   end
 end

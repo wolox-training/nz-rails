@@ -8,9 +8,3 @@
     Exclude:
       - 'spec/**/*.rb'
       - 'app/admin/*.rb'
-  Style/ClassAndModuleChildren:
-    Exclude:
-      - 'app/controllers/users/*.rb'
-  Metrics/AbcSize:
-    Exclude:
-      - 'app/controllers/users/*.rb'
