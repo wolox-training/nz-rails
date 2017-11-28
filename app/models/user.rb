@@ -23,11 +23,12 @@ class User < ApplicationRecord
   end
 
   def self.create_new_user(data)
+    pass = Devise.friendly_token[0,20]
     User.create(first_name: data['first_name'],
                 last_name: data['last_name'],
                 email: data['email'],
-                password: '123123123',
-                password_confirmation: '123123123',
+                password: pass,
+                password_confirmation: pass,
                 locale: 'es')
   end
 end
