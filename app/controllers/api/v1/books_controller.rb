@@ -26,7 +26,6 @@ module Api
                       :image,
                       :author)
       end
-
     end
   end
 end
