@@ -4,8 +4,12 @@ module Api
       skip_before_action :authenticate_request, only: [:create]
 
       def create
-        @user = User.create(user_params)
-        render json: '', status: :ok
+        @user = User.new(user_params)
+        if @user.save
+          render json: @user
+        else
+          render json: { errors: @user.errors.full_messages }, status: 400
+        end
       end
 
       private def user_params
