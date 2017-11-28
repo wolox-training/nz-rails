@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   def self.from_omniauth(access_token)
     data = access_token.info
-    user=User.find_by(email: data['email'])
+    user = User.find_by(email: data['email'])
     if user.nil?
       User.create_new_user(data)
     else
