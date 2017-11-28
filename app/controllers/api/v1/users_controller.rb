@@ -3,6 +3,10 @@ module Api
     class UsersController < ApiController
       skip_before_action :authenticate_request, only: [:create]
 
+      def index
+        render_paginate BookSuggestion
+      end
+
       def create
         @user = User.new(user_params)
         if @user.save
