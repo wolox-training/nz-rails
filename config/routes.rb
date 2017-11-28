@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: "landing#index"
+  resources :book_suggestions, only: [:new,:show]
 
   api_version(module: 'api/v1', path: { value: 'api/v1' }, defaults: { format: :json }) do
     resources :book_suggestions, only: [:create]
@@ -23,4 +23,5 @@ Rails.application.routes.draw do
     end
   end
 
+  root to: "landing#index"
 end

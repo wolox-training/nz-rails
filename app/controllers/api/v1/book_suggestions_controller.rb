@@ -3,7 +3,7 @@ module Api
     class BookSuggestionsController < ApiController
       def create
         @book_suggestion = BookSuggestion.new(book_suggestion_param
-          .merge(user_id: current_entity.id))
+          .merge(user_id: current_user_id))
         if @book_suggestion.save
           render json: @book_suggestion, status: :created
         else
@@ -21,6 +21,12 @@ module Api
           :editorial,
           :price
         )
+      end
+
+      private def current_user_id
+        current_entity.id
+      rescue Wor::Authentication::Exceptions::MissingAuthorizationHeader
+        nil
       end
     end
   end
