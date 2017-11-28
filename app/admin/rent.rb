@@ -1,3 +1,5 @@
+require 'time'
+
 ActiveAdmin.register Rent do
   permit_params :user_id, :book_id, :to, :from
 
@@ -22,13 +24,12 @@ ActiveAdmin.register Rent do
       f.input :book
       f.input :from, as: :datepicker,
                      datepicker_options: {
-                       min_date: '2013-10-8',
-                       max_date: '+3D'
+                       min_date: Time.zone.today.strftime('%Y-%m-%d')
                      }
 
       f.input :to, as: :datepicker,
                    datepicker_options: {
-                     min_date: '2013-10-8'
+                     min_date: Time.zone.today.strftime('%Y-%m-%d')
                    }
     end
     f.actions
