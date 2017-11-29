@@ -10,6 +10,7 @@ class OpenLibraryService
   end
 
   private
+
   def parse_json_isbn(response, isbn)
     key = response[response.keys.first]
     { ISBN: isbn,
