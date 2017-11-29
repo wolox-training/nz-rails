@@ -2,8 +2,9 @@ class OpenLibraryService
   include HTTParty
 
   def book_info(isbn_params)
-    response = HTTParty.get(
-      "https://openlibrary.org/api/books?bibkeys=ISBN:#{isbn_params}&format=json&jscmd=data"
+    @ISBN_code= 'ISBN:'+isbn_params
+    response = HTTParty.get("https://openlibrary.org/api/books",
+      query: { bibkeys:@ISBN_code, format:"json", jscmd: "data" }
     )
     parser_json_isbn(response.parsed_response, isbn_params)
   end
