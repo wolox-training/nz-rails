@@ -15,7 +15,7 @@ module Api
 
       def isbn
         open = OpenLibraryService.new
-        render json: open.book_info(params[:isbn])
+        render json: open.book_info(isbn_params[:isbn])
       end
 
       private def book_params
@@ -25,6 +25,10 @@ module Api
                       :year,
                       :image,
                       :author)
+      end
+
+      private def isbn_params
+        params.permit(:isbn)
       end
     end
   end

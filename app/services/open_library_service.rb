@@ -16,8 +16,4 @@ class OpenLibraryService
       number_of_pages: key['number_of_pages'],
       authors: key['authors'] }
   end
-
-  private def isbn_params
-    params.permit(:isbn)
-  end
 end
