@@ -51,6 +51,8 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 
 gem 'omniauth-google-oauth2'
+
+gem 'httparty'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
