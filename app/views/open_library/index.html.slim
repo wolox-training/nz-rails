@@ -1,0 +1,8 @@
+.footer-section
+  = form_with(url: open_library_index_path,id: 'isbn_form') do |f|
+    br
+    = f.text_field :isbn, class:"form-control"
+    br
+    button.footer-button type='submit'
+      = f.submit "Found your book", remote: true
+.main-section

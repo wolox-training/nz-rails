@@ -25,5 +25,6 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :open_library
   root to: "landing#index"
 end

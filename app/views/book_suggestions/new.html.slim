@@ -2,7 +2,7 @@
     a class="navbar-brand" href="#"
       | Do you have any book suggestion?
     button class="navbar-toggler collapsed"
-  = form_with(model: @book_suggestion, url: api_v1_book_suggestions_path) do |f|
+  = form_with(model: @book_suggestion, url: api_v1_book_suggestions_path,id: 'book_suggestion_form') do |f|
     br
     div class="form-group row"
       label class="col-2 col-form-label" style="text-align:center" Author
