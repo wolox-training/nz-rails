@@ -4,8 +4,7 @@ class OpenLibraryController < ApplicationController
   def create
     open = OpenLibraryService.new
     @response = open.book_info(params[:isbn])
-
-    if @response.size == 1
+    if @response.nil?
       render status: :not_found
     else
       render json: @response, status: :ok

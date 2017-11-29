@@ -23,6 +23,6 @@ class OpenLibraryService
     }
   end
   private def parse_empty_json(isbn)
-    { ISBN: isbn }
+    nil
   end
 end
