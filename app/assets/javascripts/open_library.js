@@ -13,7 +13,3 @@ $('form#isbn_form').ready(function(){
       alert("Book NOT found");
   });
 });
-
-function callGroups(ID) {
-    $(this).append("<ul><li> first</li><li>second item</li> </a></li> ");
-}
