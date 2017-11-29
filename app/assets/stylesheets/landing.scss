@@ -1,0 +1,112 @@
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  font-family: $font;
+}
+
+.main-section {
+  align-items: center;
+  border-top: 15px solid $orange;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 20px;
+
+
+  .gradient-line {
+    background: linear-gradient(0deg, $white, $orange 40%, $white);
+    height: 400px;
+    margin: 0 50px;
+    width: 5px;
+  }
+}
+
+
+.feature-section {
+  align-items: center;
+  background-color: $light-grey;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  position: relative;
+
+  &::before {
+    background-image: image-url('triangle.png');
+    background-repeat: repeat;
+    content: '';
+    height: 12px;
+    position: absolute;
+    top: -12px;
+    width: 100%;
+  }
+
+  .item {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 30px;
+    padding-top: 10px;
+
+    .title {
+      color: $dark-grey;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    .text {
+      color: $grey;
+      text-align: center;
+      width: 200px;
+    }
+  }
+}
+
+.footer-section {
+  align-items: center;
+  background-color: $orange;
+  box-shadow: 0 -8px 20px 0 $shadow-grey;
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  z-index: 1;
+
+  .footer-text {
+    color: $white;
+    font: $font;
+    font-size: 20px;
+  }
+
+  .footer-input {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 300px;
+    min-height: 30px;
+    width: 100%;
+  }
+
+  .footer-button {
+    border: 1px solid $white;
+    border-radius: 10px;
+    color: $white;
+    font: $font;
+    font-size: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    padding: 10px;
+  }
+}
+
+form {
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .phone,
+  .gradient-line {
+    display: none;
+  }
+}

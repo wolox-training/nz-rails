@@ -1,0 +1,73 @@
+  header class="navbar navbar-expand-md navbar-dark bg-dark"
+    a class="navbar-brand" href="#"
+      | Do you have any book suggestion?
+    button class="navbar-toggler collapsed"
+  = form_with(model: @book_suggestion, url: api_v1_book_suggestions_path,id: 'book_suggestion_form') do |f|
+    br
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Author
+      div class="col-10"
+        = f.text_field :author, class:"form-control"
+
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Title
+      div class="col-10"
+        = f.text_field :title, class:"form-control"
+
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Link
+      div class="col-10"
+        = f.text_field :link, class:"form-control"
+
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Year
+      div class="col-10"
+        = f.number_field :year, class:"form-control"
+
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Publisher
+      div class="col-10"
+        = f.text_field :publisher, class:"form-control"
+
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Editorial
+      div class="col-10"
+        = f.text_field :editorial, class:"form-control"
+
+    div class="form-group row"
+      label class="col-2 col-form-label" style="text-align:center" Price:
+      div class="col-10"
+        = f.number_field :price, step: :any, class:"form-control"
+    br
+    div style="text-align:center"
+      = f.submit "Create", remote: true, class:"btn btn-primary",align:"center"
+    br
+  end
+
+  table class="table"
+    tr class="thead-dark"
+      th scope="col" Title
+      th scope="col" Author
+      th scope="col" Link
+      th scope="col" Year
+      th scope="col" Publisher
+      th scope="col" Editorial
+      th scope="col" Price
+
+      - @all_book_suggestion.each do |book_suggestion|
+        tr
+          td
+            =book_suggestion.title
+          td
+            =book_suggestion.author
+          td
+            =book_suggestion.link
+          td
+            =book_suggestion.year
+          td
+            =book_suggestion.publisher
+          td
+            =book_suggestion.editorial
+          td
+            =book_suggestion.price
+  end

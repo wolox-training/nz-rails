@@ -1,0 +1,11 @@
+en:
+  views:
+    rent_mailer:
+      subject: 'Rent creation'
+      header: 'You have a create a new book rent!'
+      title: 'The rent for the book %{title}'
+      author: 'Author: %{author}'
+      publisher: 'Publisher: %{publisher}'
+      genre: 'Genre: %{genre}'
+      rent_creation_time: 'The rent was created on: %{time_now}'
+      rent_time: 'The rent is from: %{from} to: %{to}'
