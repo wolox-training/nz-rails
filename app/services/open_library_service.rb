@@ -1,26 +1,21 @@
 class OpenLibraryService
   include HTTParty
 
-  def book_info(isbn)
-    response = HTTParty.get(
-      "https://openlibrary.org/api/books?bibkeys=ISBN:#{isbn}&format=json&jscmd=data"
-    )
-    pretty_response = response.parsed_response
-    if pretty_response.empty?
-      parse_empty_json(isbn)
-    else
-      parser_json_isbn(response.parsed_response, isbn)
-    end
+
+  def book_info(isbn_params)
+    @isbn_code = 'ISBN:' + isbn_params
+    response = HTTParty.get('https://openlibrary.org/api/books',
+                            query: { bibkeys: @isbn_code, format: 'json', jscmd: 'data' })
+    parse_json_isbn(response.parsed_response, isbn_params)
   end
 
-  private def parser_json_isbn(response, isbn)
-    {
-      ISBN: isbn,
-      title: response[response.keys.first]['title'],
-      subtitle: response[response.keys.first]['subtitle'],
-      number_of_pages: response[response.keys.first]['number_of_pages'],
-      authors: response[response.keys.first]['authors']
-    }
+  private def parse_json_isbn(response, isbn)
+    key = response[response.keys.first]
+    { ISBN: isbn,
+      title: key['title'],
+      subtitle: key['subtitle'],
+      number_of_pages: key['number_of_pages'],
+      authors: key['authors'] }
   end
   private def parse_empty_json(isbn)
     nil
