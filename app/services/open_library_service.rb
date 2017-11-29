@@ -1,7 +1,6 @@
 class OpenLibraryService
   include HTTParty
 
-
   def book_info(isbn_params)
     @isbn_code = 'ISBN:' + isbn_params
     response = HTTParty.get('https://openlibrary.org/api/books',
@@ -17,7 +16,7 @@ class OpenLibraryService
       number_of_pages: key['number_of_pages'],
       authors: key['authors'] }
   end
-  private def parse_empty_json(isbn)
+  private def parse_empty_json(_isbn)
     nil
   end
 end
