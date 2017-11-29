@@ -6,7 +6,7 @@ class OpenLibraryController < ApplicationController
     @response = open.book_info(params[:isbn])
 
     if @response.size == 1
-      render json: '', status: :not_found
+      render status: :not_found
     else
       render json: @response, status: :ok
     end
