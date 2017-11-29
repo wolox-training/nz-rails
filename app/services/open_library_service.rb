@@ -9,12 +9,11 @@ class OpenLibraryService
   end
 
   private def parser_json_isbn(response, isbn)
-    {
-      ISBN: isbn,
-      title: response[response.keys.first]['title'],
-      subtitle: response[response.keys.first]['subtitle'],
-      number_of_pages: response[response.keys.first]['number_of_pages'],
-      authors: response[response.keys.first]['authors']
-    }
+    key = response[response.keys.first]
+    { ISBN: isbn,
+      title: key['title'],
+      subtitle: key['subtitle'],
+      number_of_pages: key['number_of_pages'],
+      authors: key['authors'] }
   end
 end
