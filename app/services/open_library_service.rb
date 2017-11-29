@@ -6,10 +6,10 @@ class OpenLibraryService
     response = HTTParty.get("https://openlibrary.org/api/books",
       query: { bibkeys:@ISBN_code, format:"json", jscmd: "data" }
     )
-    parser_json_isbn(response.parsed_response, isbn_params)
+    parse_json_isbn(response.parsed_response, isbn_params)
   end
 
-  private def parser_json_isbn(response, isbn)
+  private def parse_json_isbn(response, isbn)
     key = response[response.keys.first]
     { ISBN: isbn,
       title: key['title'],
