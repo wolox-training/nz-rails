@@ -2,10 +2,9 @@ class OpenLibraryService
   include HTTParty
 
   def book_info(isbn_params)
-    @ISBN_code= 'ISBN:'+isbn_params
-    response = HTTParty.get("https://openlibrary.org/api/books",
-      query: { bibkeys:@ISBN_code, format:"json", jscmd: "data" }
-    )
+    @isbn_code = 'ISBN:' + isbn_params
+    response = HTTParty.get('https://openlibrary.org/api/books',
+                            query: { bibkeys: @isbn_code, format: 'json', jscmd: 'data' })
     parse_json_isbn(response.parsed_response, isbn_params)
   end
 
@@ -19,7 +18,6 @@ class OpenLibraryService
   end
 
   private def isbn_params
-      params.permit(:isbn)
+    params.permit(:isbn)
   end
-
 end
